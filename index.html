@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px system-ui,-apple-system,Segoe UI,Roboto,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
+</head><body>
+<title>New Year Tender Opening</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>
+:root{
+  --bg:#EEF1F5; --surface:#FFFFFF; --ink:#13202E; --muted:#56636F; --line:#D6DDE6;
+  --board:#0E1620; --board-ink:#F4C55B; --board-dim:#97A3AF; --accent:#B87A14; --accent-bg:#FBEFD6;
+  --go:#17785F; --go-bg:#DDF2EA; --warn:#B23A27; --warn-bg:#F9E1DC; --chip:#EEF1F5;
+  --display:"Bricolage Grotesque", "Avenir Next", system-ui, sans-serif;
+  --body:"Figtree", "Segoe UI", system-ui, sans-serif;
+  --mono:"JetBrains Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0D1218; --surface:#161E28; --ink:#E6ECF2; --muted:#A3B0BD; --line:#2A3542;
+  --board:#05090D; --board-ink:#F4C55B; --board-dim:#8693A0; --accent:#F0B24A; --accent-bg:#3A2D12;
+  --go:#4CCB9F; --go-bg:#123228; --warn:#F28B76; --warn-bg:#3A1A14; --chip:#1E2834; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0D1218; --surface:#161E28; --ink:#E6ECF2; --muted:#A3B0BD; --line:#2A3542;
+  --board:#05090D; --board-ink:#F4C55B; --board-dim:#8693A0; --accent:#F0B24A; --accent-bg:#3A2D12;
+  --go:#4CCB9F; --go-bg:#123228; --warn:#F28B76; --warn-bg:#3A1A14; --chip:#1E2834; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.5}
+.wrap{max-width:720px;margin:0 auto;padding-block:20px 64px;padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px));display:flex;flex-direction:column;gap:20px}
+header.board{background:var(--board);color:var(--board-ink);border-radius:16px;padding:22px 20px;display:flex;flex-direction:column;gap:8px}
+.board .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--board-dim)}
+.board h1{font-family:var(--display);font-weight:800;font-size:clamp(28px,7vw,40px);line-height:1.05;margin:0;text-wrap:balance}
+.board p{margin:0;color:#D9E0E7;font-size:15px}
+.steps{display:flex;gap:8px;flex-wrap:wrap;font-family:var(--mono);font-size:12px;color:var(--board-dim)}
+.steps span{border:1px solid #2A3542;border-radius:999px;padding:3px 10px}
+section.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:12px}
+h2{font-family:var(--display);font-weight:800;font-size:22px;line-height:1.15;margin:0;display:flex;gap:10px;align-items:baseline}
+h2 .n{font-family:var(--mono);font-size:13px;color:var(--accent);font-weight:700}
+.hint{color:var(--muted);font-size:14px;margin:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+#pri{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (max-width:520px){#pri{grid-template-columns:1fr}}
+#pri .chip{border-radius:14px}
+button{font:inherit;color:inherit;cursor:pointer}
+.chip{background:var(--chip);border:2px solid transparent;border-radius:999px;padding:10px 16px;font-weight:600;font-size:15px;min-height:44px}
+.chip[aria-pressed="true"]{background:var(--accent-bg);border-color:var(--accent);color:var(--ink)}
+.chip small{display:block;font-weight:500;font-size:12px;color:var(--muted)}
+.cities{display:flex;flex-direction:column;gap:12px}
+.city{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:10px}
+.city.v1{border:2px solid var(--go)}.city.v2{border:2px solid var(--accent)}.city.vx{opacity:.72;border:2px dashed var(--warn)}
+.ch{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.ch h3{font-family:var(--display);font-weight:800;font-size:22px;margin:0;line-height:1.1}
+.ch .rank{font-family:var(--mono);font-size:12px;color:var(--muted)}
+.fit{font-family:var(--mono);text-align:right;flex:none}
+.fit b{display:block;font-size:24px;line-height:1;color:var(--ink)}
+.fit span{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.fact{background:var(--chip);border-radius:10px;padding:8px 10px;min-width:0}
+.fact b{display:block;font-family:var(--mono);font-size:16px}
+.fact span{font-size:12px;color:var(--muted)}
+.pm{display:flex;flex-direction:column;gap:4px;font-size:15px;margin:0;padding:0;list-style:none}
+.pm li{display:flex;gap:8px}
+.pm .p::before{content:"+";color:var(--go);font-weight:700;width:12px;flex:none}
+.pm .m::before{content:"−";color:var(--warn);font-weight:700;width:12px;flex:none}
+.votes{display:flex;gap:8px}
+.votes button{flex:1;min-height:44px;border-radius:10px;border:2px solid var(--line);background:transparent;font-weight:700;font-size:15px}
+.votes button[data-v="1"][aria-pressed="true"]{background:var(--go-bg);border-color:var(--go);color:var(--go)}
+.votes button[data-v="2"][aria-pressed="true"]{background:var(--accent-bg);border-color:var(--accent);color:var(--accent)}
+.votes button[data-v="x"][aria-pressed="true"]{background:var(--warn-bg);border-color:var(--warn);color:var(--warn)}
+details.more summary{cursor:pointer;font-weight:700;padding:12px 0;color:var(--accent);list-style:none}
+details.more summary::-webkit-details-marker{display:none}
+.codebox{background:var(--board);color:var(--board-ink);border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:10px}
+.codebox .code{font-family:var(--mono);font-size:clamp(15px,4.4vw,20px);font-weight:700;word-break:break-all;user-select:all}
+.codebox p{margin:0;color:#D9E0E7;font-size:14px}
+.btn{background:var(--board-ink);color:#0E1620;border:0;border-radius:10px;padding:12px 18px;font-weight:700;min-height:44px;align-self:flex-start}
+.btn.ghost{background:transparent;color:var(--ink);border:2px solid var(--line)}
+.missing{color:var(--board-ink);font-size:14px}
+.foot{color:var(--muted);font-size:13px;display:flex;flex-direction:column;gap:6px}
+.foot a{color:var(--accent)}
+textarea{width:100%;min-height:110px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font-family:var(--mono);font-size:13px;padding:10px}
+.tw{overflow-x:auto}
+table{border-collapse:separate;border-spacing:0;width:100%;font-size:14px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+td.num{font-family:var(--mono);font-weight:700}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;align-items:stretch}
+.fnode{background:var(--chip);border-radius:12px;padding:10px 12px;display:flex;flex-direction:column;gap:2px;position:relative;min-width:0}
+.fnode .k{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);font-weight:700}
+.fnode b{font-family:var(--mono);font-size:18px}
+.fnode span{font-size:12px;color:var(--muted);line-height:1.3}
+.fnode:not(:last-child)::after{content:"→";position:absolute;right:-9px;top:50%;transform:translateY(-50%);color:var(--accent);font-weight:700;font-size:16px;background:var(--surface);border-radius:50%;width:18px;text-align:center;line-height:18px;z-index:1}
+.payrow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.pay{border:2px solid var(--line);border-radius:12px;padding:10px 12px;min-width:0}
+.pay.me{border-color:var(--accent)}
+.pay .who{font-size:13px;color:var(--muted)} .pay b{display:block;font-family:var(--mono);font-size:18px}
+.pay .d{font-size:12px;color:var(--muted)}
+@media (max-width:520px){.flow{grid-template-columns:repeat(2,minmax(0,1fr))}.fnode:nth-child(2)::after{display:none}}
+</style>
+
+<div class="wrap">
+  <header class="board">
+    <div class="eyebrow">New Year 2026/27 · 29 Dec – 2 Jan</div>
+    <h1>New Year Tender Opening</h1>
+    <p>Where do we ring in 2027? Twelve cities made it through the travel tests. Tell us who you are, pick what matters most, vote, and seal your bid. About a minute.</p>
+    <div class="steps"><span>1 Who</span><span>2 What matters most</span><span>3 Vote</span><span>4 Seal your bid</span></div>
+  </header>
+
+  <section class="card" aria-labelledby="h-who">
+    <h2 id="h-who"><span class="n">1</span>Who are you?</h2>
+    <div class="chips" id="who" role="group" aria-label="Who are you"></div>
+  </section>
+
+  <section class="card" aria-labelledby="h-pri">
+    <h2 id="h-pri"><span class="n">2</span>What matters most to you?</h2>
+    <p class="hint">Pick one. It counts double in your fit score, and the cities below re-sort.</p>
+    <div class="chips" id="pri" role="group" aria-label="Pick what matters most"></div>
+  </section>
+
+  <section class="card" aria-labelledby="h-money">
+    <h2 id="h-money"><span class="n">€</span>How the money could work</h2>
+    <p class="hint"><b>Draft, not agreed:</b> this shows option 1 of 3. All three options and the recommendation are on slides 8–9 of the presentation; we decide together on the call.</p>
+    <div class="chips" id="mcity" role="group" aria-label="Example city"></div>
+    <div class="flow" id="flow"></div>
+    <div class="payrow" id="payrow"></div>
+    <p class="hint" id="mnote"></p>
+    <p class="hint"><b>Why one pot:</b> where we go is a group choice, so nobody pays more just for living further away. <b>Not in it:</b> Antonis's Abu Dhabi ticket (the pot counts him as flying back to Athens), bags, food, drinks, NYE dinner; shared bills just go into Tricount as they happen. Each couple books its own flights, one person books the flat, Tricount settles up once after the trip. Nothing is fixed: the group picks the option.</p>
+  </section>
+
+  <section aria-labelledby="h-vote" style="display:flex;flex-direction:column;gap:12px">
+    <h2 id="h-vote"><span class="n">3</span>Vote: 1st, 2nd and any no-go</h2>
+    <p class="hint" id="costnote">Costs are per couple: flights, flat, city tax and airport transport, from one shared pot. Food and drinks not included.</p>
+    <div class="cities" id="top"></div>
+    <details class="more" id="moreWrap"><summary id="moreSum">See the other 8 cities</summary><div class="cities" id="rest"></div></details>
+  </section>
+
+  <section class="codebox" aria-labelledby="h-code">
+    <h2 id="h-code" style="color:var(--board-ink)"><span class="n" style="color:var(--board-dim)">4</span>Your sealed bid</h2>
+    <div class="code" id="code" aria-live="polite"></div>
+    <div class="missing" id="missing"></div>
+    <button class="btn" id="copy" type="button">Copy bid</button>
+    <p>Send it to Antonis <b>privately</b> by <b>Saturday 17 October</b>. Don't show anyone: all six bids are opened together on Sunday.</p>
+  </section>
+
+  <details class="card" id="tally">
+    <summary style="cursor:pointer;font-weight:700">For Antonis: the bid opening</summary>
+    <p class="hint">Paste all the bids (or the whole chats). 1st = 2 points, 2nd = 1 point. Each person counts once, latest code wins.</p>
+    <textarea id="paste" aria-label="Paste codes here" placeholder="NY27-RIC-TC-1BER-2ATH-xVIE"></textarea>
+    <div id="result"></div>
+  </details>
+
+  <div class="foot">
+    <span>Group score = journey 30 + stay 30 + cost 40. Your fit score counts the one you picked double. New Year's Eve, weather and things to do are facts for your vote, not scored. Prices from lastminute.com, Expedia and Booking.com on 14–15 Oct 2026, nothing booked.</span>
+    <span>Every flight, flat and thing to do: <a href="presentation.pdf" target="_blank" rel="noopener">the full presentation (PDF)</a>.</span>
+  </div>
+</div>
+
+<script>
+const D = [{"code": "ATH", "name": "Athens", "total": 76.9, "J": 14.595, "S": 27.0, "X": 0.0, "C": 35.26800436160564, "share": {"ra": 1328, "dd": 1328, "ae": 1328}, "group": 3984, "extra": 535, "own": {"ra": 1456, "dd": 2025, "ae": 504}, "d2d": {"ra_out": 443, "ra_home": 418, "dd_out": 573, "dd_home": 588, "an_out": 0, "an_home": 673, "el_out": 0, "el_home": 0}, "plus": ["Best flat: 7 min from Syntagma", "Nobody leaves the flat before 09:22 on 2 Jan"], "nye": "free concert + fireworks, Syntagma", "temp": 15, "minus": ["Dearest of the top four", "D&D about 9½ h each way"]}, {"code": "CPH", "name": "Copenhagen", "total": 73.0, "J": 14.174999999999999, "S": 18.86, "X": 0.0, "C": 40.0, "share": {"ra": 1070, "dd": 1070, "ae": 1070}, "group": 3210, "extra": 401, "own": {"ra": 1183, "dd": 813, "ae": 1215}, "d2d": {"ra_out": 387, "ra_home": 367, "dd_out": 205, "dd_home": 205, "an_out": 392, "an_home": 602, "el_out": 392, "el_home": 337}, "plus": ["Cheapest of all twelve", "D&D just take the train, about 3½ h"], "nye": "Tivoli fireworks (paid)", "temp": 5, "minus": ["Dark: about 7 h of daylight"]}, {"code": "BER", "name": "Berlin", "total": 72.2, "J": 11.129999999999999, "S": 21.7, "X": 0.0, "C": 39.405924854018686, "share": {"ra": 1103, "dd": 1103, "ae": 1103}, "group": 3308, "extra": 303, "own": {"ra": 1092, "dd": 1114, "ae": 1102}, "d2d": {"ra_out": 391, "ra_home": 366, "dd_out": 441, "dd_home": 416, "an_out": 331, "an_home": 621, "el_out": 331, "el_home": 331}, "plus": ["Second cheapest of all twelve"], "nye": "free party + fireworks at the Brandenburg Gate (free ticket)", "temp": 4, "minus": ["Antonis leaves the flat at 06:29 on 2 Jan"]}, {"code": "ROM", "name": "Rome", "total": 70.7, "J": 13.350000000000001, "S": 20.04, "X": 0.0, "C": 37.263805806642274, "share": {"ra": 1219, "dd": 1219, "ae": 1219}, "group": 3658, "extra": 555, "own": {"ra": 995, "dd": 1655, "ae": 1009}, "d2d": {"ra_out": 370, "ra_home": 325, "dd_out": 545, "dd_home": 545, "an_out": 335, "an_home": 615, "el_out": 335, "el_home": 295}, "plus": ["R&A about 6 h each way"], "nye": "free concert, Circo Massimo", "temp": 13, "minus": ["D&D about 9 h each way"]}, {"code": "MUC", "name": "Munich", "total": 64.7, "J": 11.504999999999999, "S": 16.74, "X": 0.0, "C": 36.49412508025151, "share": {"ra": 1261, "dd": 1261, "ae": 1261}, "group": 3784, "extra": 278, "own": {"ra": 1406, "dd": 1300, "ae": 1077}, "d2d": {"ra_out": 385, "ra_home": 350, "dd_out": 510, "dd_home": 505, "an_out": 325, "an_home": 615, "el_out": 325, "el_home": 325}, "plus": ["Cheapest flat"], "nye": "ticketed parties only", "temp": 5, "minus": ["Often wet: about 17 rainy days in December"]}, {"code": "MIL", "name": "Milan", "total": 61.0, "J": 9.285, "S": 12.34, "X": 0.0, "C": 39.35058953010832, "share": {"ra": 1106, "dd": 1106, "ae": 1106}, "group": 3317, "extra": 531, "own": {"ra": 777, "dd": 1508, "ae": 1032}, "d2d": {"ra_out": 385, "ra_home": 340, "dd_out": 545, "dd_home": 532, "an_out": 345, "an_home": 622, "el_out": 345, "el_home": 337}, "plus": ["Cheap"], "nye": "free show, Piazza Duomo, no fireworks", "temp": 7, "minus": ["Weakest flat of the twelve"]}, {"code": "PRG", "name": "Prague", "total": 60.9, "J": 13.620000000000001, "S": 14.94, "X": 0.0, "C": 32.32253541090627, "share": {"ra": 1413, "dd": 1413, "ae": 1413}, "group": 4238, "extra": 328, "own": {"ra": 1279, "dd": 1631, "ae": 1328}, "d2d": {"ra_out": 395, "ra_home": 360, "dd_out": 465, "dd_home": 420, "an_out": 360, "an_home": 600, "el_out": 360, "el_home": 320}, "plus": [], "nye": "free stage, Old Town Square, no fireworks", "temp": 5, "minus": ["D&D about 7–8 h each way", "Flat layout unconfirmed"]}, {"code": "BCN", "name": "Barcelona", "total": 60.3, "J": 12.27, "S": 16.16, "X": 0.0, "C": 31.907785984636632, "share": {"ra": 1421, "dd": 1421, "ae": 1421}, "group": 4263, "extra": 642, "own": {"ra": 1018, "dd": 2026, "ae": 1218}, "d2d": {"ra_out": 304, "ra_home": 259, "dd_out": 534, "dd_home": 509, "an_out": 394, "an_home": 634, "el_out": 394, "el_home": 344}, "plus": ["R&A only about 5 h each way", "Rarely rains in December"], "nye": "Montjuic fireworks show", "temp": 14, "minus": ["Antonis leaves the flat at 06:26 on 2 Jan"]}, {"code": "AMS", "name": "Amsterdam", "total": 59.6, "J": 12.495000000000001, "S": 14.7, "X": 0.0, "C": 32.43526649228587, "share": {"ra": 1410, "dd": 1410, "ae": 1410}, "group": 4231, "extra": 543, "own": {"ra": 1212, "dd": 1635, "ae": 1385}, "d2d": {"ra_out": 353, "ra_home": 323, "dd_out": 423, "dd_home": 418, "an_out": 403, "an_home": 633, "el_out": 403, "el_home": 353}, "plus": [], "nye": "free light + fireworks show, Museumplein", "temp": 7, "minus": ["Antonis leaves the flat at 06:22 on 2 Jan", "Rainy: about 14 wet days in December"]}, {"code": "IST", "name": "Istanbul", "total": 58.5, "J": 9.93, "S": 19.7, "X": 0.0, "C": 28.908297943212993, "share": {"ra": 1480, "dd": 1480, "ae": 1480}, "group": 4441, "extra": 377, "own": {"ra": 1648, "dd": 1906, "ae": 887}, "d2d": {"ra_out": 598, "ra_home": 558, "dd_out": 575, "dd_home": 590, "an_out": 310, "an_home": 638, "el_out": 310, "el_home": 383}, "plus": ["Lots to do"], "nye": "Bosphorus fireworks", "temp": 11, "minus": ["Long trips: R&A about 10 h each way", "Security advice to re-check in December"]}, {"code": "PAR", "name": "Paris", "total": 43.1, "J": 10.32, "S": 14.3, "X": 0.0, "C": 18.450723464130604, "share": {"ra": 1688, "dd": 1688, "ae": 1688}, "group": 5063, "extra": 570, "own": {"ra": 1310, "dd": 2136, "ae": 1617}, "d2d": {"ra_out": 326, "ra_home": 296, "dd_out": 501, "dd_home": 505, "an_out": 420, "an_home": 670, "el_out": 420, "el_home": 351}, "plus": [], "nye": "fireworks, Champs-Elysees", "temp": 8, "minus": ["Second most expensive", "Antonis leaves the flat at 06:15 on 2 Jan"]}, {"code": "VIE", "name": "Vienna", "total": 36.0, "J": 11.895, "S": 24.04, "X": 0.0, "C": 0.0799318382375374, "share": {"ra": 2051, "dd": 2051, "ae": 2051}, "group": 6154, "extra": 635, "own": {"ra": 2047, "dd": 2341, "ae": 1766}, "d2d": {"ra_out": 390, "ra_home": 350, "dd_out": 485, "dd_home": 485, "an_out": 340, "an_home": 585, "el_out": 340, "el_home": 300}, "plus": ["Very good flat"], "nye": "free Silvesterpfad trail, no city fireworks", "temp": 5, "minus": ["By far the most expensive"]}];
+const PEOPLE = [
+  {id:"RIC", name:"Ricardo", c:"ra", t:"ra", flag:"🇵🇹"}, {id:"ANN", name:"Annabelle", c:"ra", t:"ra", flag:"🇲🇹"},
+  {id:"DAV", name:"David", c:"dd", t:"dd", flag:"🇩🇰"}, {id:"DAN", name:"Danica", c:"dd", t:"dd", flag:"🇷🇸"},
+  {id:"ELE", name:"Eleni", c:"ae", t:"el", flag:"🇬🇷"}, {id:"ANT", name:"Antonis", c:"ae", t:"an", flag:"🇵🇸"}];
+const PRI = [
+  {id:"T", k:"J", max:30, w:30, name:"Easy travel", sub:"short door to door, sane hours"},
+  {id:"F", k:"S", max:30, w:30, name:"Nice flat", sub:"location, rating, comfort"},
+  {id:"C", k:"C", max:40, w:40, name:"Low cost", sub:"what it costs us all"}];
+const COUPLE = {ra:"Ricardo & Annabelle", dd:"David & Danica", ae:"Antonis & Eleni"};
+const st = {who:null, pri:[], v:{}};
+try { const s = JSON.parse(localStorage.getItem("ny27vote") || "null"); if (s && s.v) Object.assign(st, s); } catch (e) {}
+const save = () => { try { localStorage.setItem("ny27vote", JSON.stringify(st)); } catch (e) {} };
+const eur = n => "€" + Math.round(n).toLocaleString("en-GB");
+const hm = m => m ? Math.floor(m / 60) + "h" + String(m % 60).padStart(2, "0") : "home";
+const el = (t, a = {}, ...kids) => { const e = document.createElement(t); for (const [k, v] of Object.entries(a)) { if (k === "class") e.className = v; else if (k.startsWith("on")) e.addEventListener(k.slice(2), v); else e.setAttribute(k, v); } for (const c of kids) e.append(c); return e; };
+
+function fit(c) {
+  let s = 0, w = 0;
+  for (const p of PRI) { const wt = p.w * (st.pri.includes(p.id) ? 2 : 1); s += wt * c[p.k] / p.max; w += wt; }
+  return 100 * s / w;
+}
+function renderWho() {
+  const box = document.getElementById("who"); box.innerHTML = "";
+  for (const p of PEOPLE) box.append(el("button", {class:"chip", type:"button", "aria-pressed": String(st.who === p.id), onclick: () => { st.who = p.id; save(); renderAll(); }}, p.flag + " " + p.name));
+}
+function renderPri() {
+  const box = document.getElementById("pri"); box.innerHTML = "";
+  for (const p of PRI) {
+    const on = st.pri.includes(p.id);
+    box.append(el("button", {class:"chip", type:"button", "aria-pressed": String(on), onclick: () => {
+      if (on) st.pri = st.pri.filter(x => x !== p.id); else { st.pri.push(p.id); if (st.pri.length > 1) st.pri.shift(); }
+      save(); renderAll(); }}, p.name, el("small", {}, p.sub)));
+  }
+}
+function setVote(id, v) {
+  if (v === "1" || v === "2") for (const k in st.v) if (st.v[k] === v) delete st.v[k];
+  if (st.v[id] === v) delete st.v[id]; else st.v[id] = v;
+  save(); renderAll();
+}
+function card(c, i) {
+  const me = PEOPLE.find(p => p.id === st.who);
+  const cost = me ? c.share[me.c] : null;
+  const there = me ? c.d2d[me.t + "_out"] : null, home = me ? c.d2d[me.t + "_home"] : null;
+  const v = st.v[c.code];
+  const facts = el("div", {class:"facts"},
+    el("div", {class:"fact"}, el("b", {}, cost ? eur(cost) : eur(c.share.ra) + "+"), el("span", {}, me ? "your couple" : "per couple")),
+    el("div", {class:"fact"}, el("b", {}, me ? hm(there) : "—"), el("span", {}, "you, getting there")),
+    el("div", {class:"fact"}, el("b", {}, me ? hm(home) : "—"), el("span", {}, "you, going home")));
+  const pm = el("ul", {class:"pm"}, ...c.plus.map(t => el("li", {class:"p"}, t)), ...c.minus.map(t => el("li", {class:"m"}, t)));
+  const facts2 = el("p", {class:"hint"}, "New Year's Eve: " + c.nye + " · December about " + c.temp + "°C");
+  const vb = (val, label) => el("button", {type:"button", "data-v": val, "aria-pressed": String(v === val), "aria-label": label + " " + c.name, onclick: () => setVote(c.code, val)}, label);
+  return el("article", {class:"city" + (v ? " v" + v : "")},
+    el("div", {class:"ch"}, el("div", {}, el("div", {class:"rank"}, "#" + (i + 1) + " for you · group score " + c.total.toFixed(1)), el("h3", {}, c.name)),
+      el("div", {class:"fit"}, el("b", {}, fit(c).toFixed(0)), el("span", {}, "fit for you"))),
+    facts, pm, facts2, el("div", {class:"votes"}, vb("1", "1st"), vb("2", "2nd"), vb("x", "No-go")));
+}
+function renderCities() {
+  const list = [...D].sort((a, b) => fit(b) - fit(a));
+  const top = document.getElementById("top"), rest = document.getElementById("rest");
+  top.innerHTML = ""; rest.innerHTML = "";
+  list.forEach((c, i) => (i < 4 ? top : rest).append(card(c, i)));
+  const me = PEOPLE.find(p => p.id === st.who);
+  document.getElementById("costnote").textContent = me
+    ? "Cost shown is for " + COUPLE[me.c] + " from one shared pot: flights, flat, city tax and airport transport. Food and drinks not included." + (me.c === "ae" ? " Antonis's Abu Dhabi ticket is outside the pot; the extra over an Athens flight is his own." : "")
+    : "Pick who you are to see your own cost and travel times. Costs are per couple from one shared pot; food and drinks not included.";
+}
+function code() {
+  const v1 = Object.keys(st.v).find(k => st.v[k] === "1"), v2 = Object.keys(st.v).find(k => st.v[k] === "2");
+  const nx = Object.keys(st.v).filter(k => st.v[k] === "x").sort();
+  const miss = [];
+  if (!st.who) miss.push("who you are"); if (st.pri.length < 1) miss.push("what matters most"); if (!v1) miss.push("a 1st choice");
+  return {txt: ["NY27", st.who || "???", [...st.pri].sort().join("") || "-", "1" + (v1 || "?"), "2" + (v2 || "-"), "x" + (nx.join(".") || "-")].join("-"), miss};
+}
+function renderCode() {
+  const c = code();
+  document.getElementById("code").textContent = c.txt;
+  document.getElementById("missing").textContent = c.miss.length ? "Still to do: " + c.miss.join(", ") + "." : "Sealed and ready to send.";
+}
+let mc = null;
+function renderMoney() {
+  const tops = [...D].sort((a, b) => b.total - a.total).slice(0, 4);
+  if (!mc || !D.find(c => c.code === mc)) mc = tops[1].code;
+  const c = D.find(x => x.code === mc), me = PEOPLE.find(p => p.id === st.who);
+  const box = document.getElementById("mcity"); box.innerHTML = "";
+  for (const t of tops) box.append(el("button", {class:"chip", type:"button", "aria-pressed": String(t.code === mc), onclick: () => { mc = t.code; renderMoney(); }}, t.name));
+  const pot = c.group / 3;
+  const n = (k, b, s) => el("div", {class:"fnode"}, el("span", {class:"k"}, k), el("b", {}, b), el("span", {}, s));
+  const f = document.getElementById("flow"); f.innerHTML = "";
+  f.append(n("1 The trip", eur(c.group), "everyone's flights there and back, train, airport transport, flat, city tax"),
+           n("2 Split in 3", eur(pot), "the same for each couple"));
+  const pr = document.getElementById("payrow"); pr.innerHTML = "";
+  const nm = {ra:"R&A", dd:"D&D", ae:"A&E"};
+  for (const k of ["ra", "dd", "ae"]) {
+    const d = c.share[k] - c.own[k];
+    pr.append(el("div", {class:"pay" + (me && me.c === k ? " me" : "")}, el("div", {class:"who"}, nm[k] + (me && me.c === k ? " · you" : "")), el("b", {}, eur(c.share[k])),
+      el("div", {class:"d"}, Math.abs(d) <= 15 ? "same as paying own way" : (d > 0 ? "+" + eur(d) : "−" + eur(-d)) + " vs own flights + ⅓ flat")));
+  }
+  const up = ["ra", "dd", "ae"].filter(k => c.share[k] - c.own[k] > 15).map(k => nm[k]);
+  document.getElementById("mnote").textContent = up.length
+    ? "In " + c.name + ", " + up.join(" and ") + " pay more than they would on their own: their trip there is the cheapest, so they help with the others' longer trips. Antonis's Abu Dhabi ticket is outside the pot: it counts him as flying back to Athens, and the extra (" + eur(c.extra) + " here) is his own."
+    : "In " + c.name + ", the pot comes out almost the same as everyone paying their own way. Antonis's Abu Dhabi ticket is outside the pot: it counts him as flying back to Athens, and the extra (" + eur(c.extra) + " here) is his own.";
+}
+function renderAll() { renderWho(); renderPri(); renderMoney(); renderCities(); renderCode(); }
+
+document.getElementById("copy").addEventListener("click", () => {
+  const t = code().txt, b = document.getElementById("copy");
+  const sel = () => { const r = document.createRange(); r.selectNodeContents(document.getElementById("code")); const s = getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent = "Selected: press copy"; };
+  try { navigator.clipboard.writeText(t).then(() => { b.textContent = "Copied"; setTimeout(() => b.textContent = "Copy bid", 1500); }, sel); } catch (e) { sel(); }
+});
+
+function tally() {
+  const txt = document.getElementById("paste").value, out = document.getElementById("result");
+  const re = /NY27-(RIC|ANN|DAV|DAN|ELE|ANT)-([TFXC]{0,2}|-)-1([A-Z]{3}|\?)-2([A-Z]{3}|-)-x([A-Z.]+|-)/g;
+  const by = {}; let m;
+  while ((m = re.exec(txt))) by[m[1]] = m;
+  const names = Object.fromEntries(PEOPLE.map(p => [p.id, p.name])), cn = Object.fromEntries(D.map(c => [c.code, c.name]));
+  const pts = {}, nogo = {}, pri = {};
+  for (const [who, mm] of Object.entries(by)) {
+    if (cn[mm[3]]) pts[mm[3]] = (pts[mm[3]] || 0) + 2;
+    if (cn[mm[4]]) pts[mm[4]] = (pts[mm[4]] || 0) + 1;
+    if (mm[5] !== "-") for (const x of mm[5].split(".")) if (cn[x]) (nogo[x] = nogo[x] || []).push(names[who]);
+    for (const p of mm[2]) if (p !== "-") pri[p] = (pri[p] || 0) + 1;
+  }
+  out.innerHTML = "";
+  const n = Object.keys(by).length;
+  if (!n) { out.append(el("p", {class:"hint"}, "No codes found yet.")); return; }
+  out.append(el("p", {class:"hint"}, n + " of 6 voted: " + Object.keys(by).map(k => names[k]).join(", ") + ". Still waiting: " + (PEOPLE.filter(p => !by[p.id]).map(p => p.name).join(", ") || "nobody") + "."));
+  const rows = D.map(c => ({c, p: pts[c.code] || 0, x: nogo[c.code] || []})).filter(r => r.p || r.x.length).sort((a, b) => b.p - a.p || a.x.length - b.x.length);
+  const tb = el("tbody");
+  for (const r of rows) tb.append(el("tr", {}, el("td", {}, r.c.name), el("td", {class:"num"}, String(r.p)), el("td", {}, r.x.length ? "No-go: " + r.x.join(", ") : "")));
+  out.append(el("div", {class:"tw"}, el("table", {}, el("thead", {}, el("tr", {}, el("th", {}, "City"), el("th", {}, "Points"), el("th", {}, "Flags"))), tb)));
+  const pn = Object.fromEntries(PRI.map(p => [p.id, p.name]));
+  out.append(el("p", {class:"hint"}, "Priorities picked: " + (Object.entries(pri).sort((a, b) => b[1] - a[1]).map(([k, v]) => pn[k] + " " + v).join(" · ") || "none")));
+}
+document.getElementById("paste").addEventListener("input", tally);
+renderAll();
+</script>
+
+</body></html>
